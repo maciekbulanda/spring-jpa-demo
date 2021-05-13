@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Data
-public class Owner {
+class Owner {
     @Id
     private Integer id;
     private String name;
