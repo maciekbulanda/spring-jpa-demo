@@ -20,8 +20,9 @@ class CarController {
     }
 
     @GetMapping("/{reg}")
-    Car getCarByReg(@PathVariable String reg) {
-        return carService.findById(reg).orElse(null);
+    Iterable<Car> getCarByReg(@PathVariable String reg) {
+//        return carService.findById(reg).orElse(null);
+        return carService.findByReg(reg);
     }
 
 }

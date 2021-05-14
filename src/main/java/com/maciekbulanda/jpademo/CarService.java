@@ -18,6 +18,10 @@ class CarService {
         return carRepository.findById(id);
     }
 
+    Iterable<Car> findByReg(String reg) {
+        return carRepository.findCarByRegNoContaining(reg);
+    }
+
     Car save(Car car) {
         return carRepository.save(car);
     }
