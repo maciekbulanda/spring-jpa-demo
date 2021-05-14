@@ -14,6 +14,10 @@ class OwnerService {
         return ownerRepository.findAll();
     }
 
+    Optional<Owner> findByName(String name) {
+        return ownerRepository.findOwnerByName(name);
+    }
+
     Optional<Owner> findById(int id) {
         return ownerRepository.findById(id);
     }

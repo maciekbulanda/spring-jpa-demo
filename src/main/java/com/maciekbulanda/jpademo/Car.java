@@ -1,5 +1,6 @@
 package com.maciekbulanda.jpademo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ class Car {
     private String brand;
     private String model;
     private double enginePower;
+    @JsonBackReference
     @ManyToOne
     private Owner owner;
 }
