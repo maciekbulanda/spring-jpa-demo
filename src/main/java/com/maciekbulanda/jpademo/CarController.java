@@ -1,11 +1,9 @@
 package com.maciekbulanda.jpademo;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Optional;
 
 @RestController
@@ -17,6 +15,11 @@ class CarController {
     @GetMapping
     Iterable<Car> getCars() {
         return carService.findAll();
+    }
+
+    @PostMapping
+    Car newCar(@RequestBody Car car, @RequestParam String owner) {
+        return carService.save(car);
     }
 
     @GetMapping("/{reg}")
